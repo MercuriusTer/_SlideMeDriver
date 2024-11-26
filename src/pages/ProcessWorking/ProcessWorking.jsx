@@ -191,17 +191,7 @@ function ProcessWorking({ currentShowOrder, updateOrders, setCurrentShowOrder })
             </button>
           </div>
         </div>
-        <div className="proworking-button-container">
-          <button className="working-button">
-            ติดต่อลูกค้า
-          </button>
-          <button
-            className="working-button"
-            onClick={() => setIsChatOpen(true)} // Set chat open when clicked
-          >
-            แชทติดต่อ
-          </button>
-        </div>
+
         <div className="location-container">
           <div>
             <h5>
@@ -217,6 +207,18 @@ function ProcessWorking({ currentShowOrder, updateOrders, setCurrentShowOrder })
               {currentShowOrder.address2}
             </span>
           </div>
+        </div>
+
+        <div className="proworking-button-container">
+          <button className="working-button">
+            ติดต่อลูกค้า
+          </button>
+          <button
+            className="working-button"
+            onClick={() => setIsChatOpen(true)} // Set chat open when clicked
+          >
+            แชทติดต่อ
+          </button>
         </div>
       </div>
     </div>
