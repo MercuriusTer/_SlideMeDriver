@@ -4,9 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 import "./Setting.css";
 
+import AboutMe from "../AboutMe/AboutMe";
+
 function Setting({ setLoggedInUser }) {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+
+  const [onClickAboutMe, setOnClickAboutMe] = useState(false);
 
   const handleLogoutClick = () => {
     setShowModal(true);  // Show confirmation modal
@@ -20,6 +24,10 @@ function Setting({ setLoggedInUser }) {
   const handleCancelLogout = () => {
     setShowModal(false);  // Close the modal without logging out
   };
+
+  if (onClickAboutMe) {
+    return <AboutMe setOnClickAboutMe={setOnClickAboutMe} />;
+  }
 
   return (
     <div className="Setting-container">
@@ -43,7 +51,7 @@ function Setting({ setLoggedInUser }) {
           <button className="buttonclick">
             &nbsp;<span className="bi bi-lock-fill text-success"></span>&nbsp;&nbsp;ข้อมูลและความเป็นส่วนตัว
           </button>
-          <button className="buttonclick">
+          <button className="buttonclick" onClick={() => setOnClickAboutMe(true)}>
             &nbsp;<span className="bi bi-info-circle-fill text-success"></span>&nbsp;&nbsp;เกี่ยวกับ Slide Me
           </button>
           {/* เปลี่ยนบัญชี (Change Account) Button */}
