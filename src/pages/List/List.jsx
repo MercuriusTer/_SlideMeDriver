@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import './List.css'
 
 
-const serviceCharge = 200
+const serviceCharge = 0
 
 
 function List({ ordersList, deleteOrders, setCurrentShowOrder }) {
