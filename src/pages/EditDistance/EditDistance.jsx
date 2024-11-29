@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import { Button, Card, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import L from 'leaflet';
 
 import './EditDistance.css';
@@ -84,6 +84,8 @@ function EditDistance({ saveLocation, setSaveLocation }) {
     const [selectedProvince, setSelectedProvince] = useState(""); // Selected province
     const [selectedDistrict, setSelectedDistrict] = useState(""); // Selected district
 
+    const navigate = useNavigate();
+
     // Automatically set province and district from saveLocation
     useEffect(() => {
         if (saveLocation && saveLocation.province && saveLocation.district) {
@@ -118,6 +120,7 @@ function EditDistance({ saveLocation, setSaveLocation }) {
     const handleSave = () => {
         // Save the selected province and district into state
         setSaveLocation({ province: selectedProvince, district: selectedDistrict, coordinates: center });
+        navigate("/");
     };
 
     const getCoordinates = () => {
