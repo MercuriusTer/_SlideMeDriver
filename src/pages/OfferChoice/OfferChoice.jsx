@@ -97,8 +97,6 @@ function OfferChoice({ saveLocation, setCurrentShowOrder, addOrders }) {
         const newMap = L.map("map", {
             center: [lat, lng],
             zoom: 14,
-            dragging: false, // Make map undraggable
-            scrollWheelZoom: false, // Disable scroll zoom
             zoomControl: false, // Disable zoom buttons
         });
 
