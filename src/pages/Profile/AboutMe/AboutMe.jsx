@@ -36,7 +36,7 @@ function AboutMe({ setOnClickAboutMe }) {
             <div>
                 <label htmlFor="" className="aboutme-d"></label>
                 <br />
-                <span>66018526 นาย เจตนะ เหลืองสะอาด</span>
+                <span>66018526 นาย เจตนะ เหลืองสอาด</span>
             </div>
 
         </div>
